@@ -12,6 +12,7 @@ const PATH = {
   PAGE1: '/adidas',
   PAGE2: '/puma',
   PAGE3: '/abibas',
+  PRICES: '/prices'
 } as const
 
 export const App = () => {
@@ -20,9 +21,10 @@ export const App = () => {
       <div className={styles.header}><h1>HEADER</h1></div>
       <div className={styles.body}>
         <div className={styles.nav}>
-          <S.NavWrapper><NavLink to={PATH.PAGE1}>Page1</NavLink></S.NavWrapper>
-          <S.NavWrapper><NavLink to={PATH.PAGE2}>Page2</NavLink></S.NavWrapper>
-          <S.NavWrapper><NavLink to={PATH.PAGE3}>Page3</NavLink></S.NavWrapper>
+          <S.NavWrapper><NavLink to={PATH.PAGE1}>Adidas</NavLink></S.NavWrapper>
+          <S.NavWrapper><NavLink to={PATH.PAGE2}>Puma</NavLink></S.NavWrapper>
+          <S.NavWrapper><NavLink to={PATH.PAGE3}>Abibas</NavLink></S.NavWrapper>
+          <S.NavWrapper><NavLink to={PATH.PRICES}>Цены для оптовиков</NavLink></S.NavWrapper>
         </div>
         <div className={styles.content}>
           <Routes>
@@ -31,6 +33,7 @@ export const App = () => {
             <Route path={PATH.PAGE1} element={<Adidas/>}/>
             <Route path={PATH.PAGE2} element={<Puma/>}/>
             <Route path={PATH.PAGE3} element={<Abibas/>}/>
+            <Route path={PATH.PRICES} element={<Prices/>}/>
 
             {/*<Route path={'/adidas/:id'} element={<Model/>}/>*/}
             <Route path={'/:model/:id'} element={<Model/>}/>
